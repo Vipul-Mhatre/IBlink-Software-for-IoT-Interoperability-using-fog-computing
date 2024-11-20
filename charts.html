@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature and Humidity Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            width: 80%;
+            margin: auto;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .legend div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend div span {
+            display: inline-block;
+            width: 20px;
+            height: 10px;
+        }
+        .temperature {
+            background-color: #2196f3;
+        }
+        .humidity {
+            background-color: #4caf50;
+        }
+        .threshold {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature (°C) and Humidity (%RH) Line Graph</h1>
+    <div class="chart-container">
+        <canvas id="lineChart"></canvas>
+    </div>
+    <div class="legend">
+        <div><span class="temperature"></span> Temperature (°C)</div>
+        <div><span class="humidity"></span> Humidity (%RH)</div>
+        <div><span class="threshold"></span> Threshold Lines</div>
+    </div>
+
+    <script>
+        // Dummy data
+        const labels = Array.from({ length: 30 }, (_, i) => `T${i + 1}`); // Time labels
+        const temperatureData = [18, 22, 25, 20, 21, 19, 24, 26, 23, 22, 18, 21, 25, 27, 29, 28, 22, 24, 20, 18, 19, 23, 25, 27, 26, 24, 22, 21, 20, 19];
+        const humidityData = [70, 72, 71, 73, 74, 72, 71, 75, 76, 74, 70, 71, 72, 74, 75, 76, 73, 72, 70, 71, 72, 74, 75, 76, 74, 72, 71, 70, 72, 74];
+
+        const temperatureThreshold = 20; // Threshold for temperature (°C)
+        const humidityThreshold = 72;   // Threshold for humidity (%RH)
+
+        // Chart.js configuration
+        const ctx = document.getElementById('lineChart').getContext('2d');
+        const lineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Temperature (°C)',
+                        data: temperatureData,
+                        borderColor: '#2196f3',
+                        backgroundColor: '#2196f3',
+                        fill: false,
+                        tension: 0.1,
+                        borderWidth: 2,
+                    },
+                    {
+                        label: 'Humidity (%RH)',
+                        data: humidityData,
+                        borderColor: '#4caf50',
+                        backgroundColor: '#4caf50',
+                        fill: false,
+                        tension: 0.1,
+                        borderWidth: 2,
+                    },
+                    {
+                        label: 'Temperature Threshold (20°C)',
+                        data: Array(30).fill(temperatureThreshold),
+                        borderColor: '#f44336',
+                        borderDash: [5, 5],
+                        fill: false,
+                        borderWidth: 1,
+                        pointRadius: 0,
+                    },
+                    {
+                        label: 'Humidity Threshold (72%RH)',
+                        data: Array(30).fill(humidityThreshold),
+                        borderColor: '#f44336',
+                        borderDash: [5, 5],
+                        fill: false,
+                        borderWidth: 1,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false, // Disable legend in the chart since it's created manually
+                    },
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time (T)',
+                        },
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Values (°C, %RH)',
+                        },
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+</html>
