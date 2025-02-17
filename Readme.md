@@ -50,6 +50,11 @@ The graph includes:
 ![alt text](image.png)
 ---
 
+## Algorithms Output
+![image](https://github.com/user-attachments/assets/8b33798e-e902-4001-8ec6-65bb63ab67ba)
+![image](https://github.com/user-attachments/assets/e1d0f499-e25f-4e0c-80a1-0c10c8c31fe4)
+![image](https://github.com/user-attachments/assets/1b707bdc-c8b1-46df-8364-6a552bba8083)
+
 ## Phase-1 Implementation Results
 - **Graphs**: Real-time visualization of temperature and humidity trends.  
 - **LED Notifications**: Alerts via blinking LED when the temperature exceeds the threshold.  
