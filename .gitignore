@@ -36,3 +36,8 @@ yarn.lock
 *.swp
 *.bak
 *.tmp
+
+env
+myenv
+.env
+.myenv

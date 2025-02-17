@@ -1,0 +1,32 @@
+{
+  "iblink.py": {
+    "encryption_time": 15.350137,
+    "decryption_time": 14.403539,
+    "total_time": 29.753676,
+    "cores_used": 4
+  },
+  "rsa.py": {
+    "encryption_time": 0.015056,
+    "decryption_time": 0.063648,
+    "total_time": 0.078704,
+    "cores_used": 0
+  },
+  "aes.py": {
+    "encryption_time": 0.184482,
+    "decryption_time": 0.114531,
+    "total_time": 0.299013,
+    "cores_used": 0
+  },
+  "blowfish.py": {
+    "encryption_time": 0,
+    "decryption_time": 0,
+    "total_time": 1.161921,
+    "cores_used": 0
+  },
+  "ecc.py": {
+    "encryption_time": 0,
+    "decryption_time": 0,
+    "total_time": 0,
+    "cores_used": 0
+  }
+}
