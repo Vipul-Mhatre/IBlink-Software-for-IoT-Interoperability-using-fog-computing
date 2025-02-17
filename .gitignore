@@ -36,3 +36,5 @@ yarn.lock
 *.swp
 *.bak
 *.tmp
+
+encryption.py
