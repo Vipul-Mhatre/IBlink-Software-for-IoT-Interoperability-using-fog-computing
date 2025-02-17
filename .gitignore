@@ -37,4 +37,7 @@ yarn.lock
 *.bak
 *.tmp
 
-encryption.py
+env
+myenv
+.env
+.myenv
