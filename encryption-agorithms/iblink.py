@@ -19,7 +19,7 @@ class IBLinkCrypto:
     @staticmethod
     @lru_cache(maxsize=128)
     def generate_keys(curve=SECP256k1):
-        """Generate ECDSA private and public keys."""
+        """Generate ECDh private and public keys."""
         private_key = SigningKey.generate(curve=curve)
         public_key = private_key.verifying_key
         return private_key, public_key
