@@ -47,10 +47,10 @@ def iblink_decrypt(encrypted_data, private_key, public_key):
     return aesgcm.decrypt(nonce, ciphertext, None).decode()
 
 def standard_ecc_encrypt(message, private_key, public_key):
-    return compute_shared_secret(private_key, public_key)  # Just Key Exchange
+    return compute_shared_secret(private_key, public_key) 
 
 def measure_speed():
-    message = "Hello Vipul Mhatre Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.!"
+    message = "Hello Vipul Mhatre"
     pi_private, pi_public = generate_ecc_keys()
     cloud_private, cloud_public = generate_ecc_keys()
 
@@ -69,7 +69,7 @@ def measure_speed():
     print(f"Speed Improvement: {standard_time / iblink_time:.2f}x faster")
 
 def test_iblink():
-    message = "Hello Vipul Mhatre Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.!"
+    message = "Hello Vipul Mhatre"
     
     pi_private, pi_public = generate_ecc_keys()
     cloud_private, cloud_public = generate_ecc_keys()
